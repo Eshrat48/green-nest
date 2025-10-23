@@ -2,8 +2,8 @@
 import HeroSection from '../components/HeroSection';
 import TopRatedPlants from '../components/TopRatedPlants';
 import PlantCareTips from '../components/PlantCareTips';
-import GreenExperts from '../components/GreenExperts';
 import EcoDecor from '../components/EcoDecor';
+import GreenExperts from '../components/GreenExperts';
 
 export default function Home() {
   return (
@@ -11,8 +11,8 @@ export default function Home() {
       <HeroSection />
       <TopRatedPlants />
       <PlantCareTips />
-      <GreenExperts />
       <EcoDecor />
+      <GreenExperts />
     </main>
   );
 }
