@@ -1,26 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-
-function Home() {
-  return <div className="p-10 text-center"><h1 className="text-4xl font-bold">Home Page</h1></div>;
-}
-function Plants() {
-  return <div className="p-10 text-center"><h1 className="text-4xl font-bold">Plants Page</h1></div>;
-}
-function Profile() {
-  return <div className="p-10 text-center"><h1 className="text-4xl font-bold">My Profile</h1></div>;
-}
-function Login() {
-  return <div className="p-10 text-center"><h1 className="text-4xl font-bold">Login Page</h1></div>;
-}
-function Register() {
-  return <div className="p-10 text-center"><h1 className="text-4xl font-bold">Register Page</h1></div>;
-}
+import Home from './pages/Home';
+import Plants from './pages/Plants';  // Move other pages to separate files similarly
+import Profile from './pages/Profile';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -30,6 +19,6 @@ export default function App() {
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
