@@ -1,73 +1,103 @@
-// src/components/Navbar.jsx
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import leaf from "../assets/leaf.png"; // adjust if needed
 
-const mockUser = null; // Replace with your actual auth logic later
+// Mock user for demonstration (null = logged out, object = logged in)
+const mockUser = {
+  displayName: "John Doe",
+  photoURL: "https://i.ibb.co/d6s6wXC/avatar-placeholder.png"
+};
+// const mockUser = null; // Uncomment for "logged out" view
 
 export default function Navbar() {
   const [user, setUser] = useState(mockUser);
-  function handleLogout() { setUser(null); }
+
+  function handleLogout() {
+    setUser(null); // Replace with your actual logout logic
+  }
 
   return (
-    <nav className="navbar bg-base-100 shadow-sm px-4 md:px-8">
-      <div className="flex-1">
-        <Link to="/" className="flex items-center gap-2 text-primary text-xl font-bold">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M2 12S6 2 20 2c0 18-10 20-18 10"/>
-            <line x1="2" y1="12" x2="20" y2="12"/>
-          </svg>
-          GreenNest
+    <nav className="w-full shadow-sm border border-gray-300 rounded-sm bg-white px-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={leaf}
+            alt="GreenNest logo"
+            className="w-9 h-9"
+          />
+          <span className="text-[#16a34a] text-xl font-normal">GreenNest</span>
         </Link>
-      </div>
-      <div className="flex-none gap-4">
-        <ul className="menu menu-horizontal px-1 hidden md:flex">
-          <li>
-            <NavLink to="/" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/plants" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>Plants</NavLink>
-          </li>
-          <li>
-            <NavLink to="/profile" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>My Profile</NavLink>
-          </li>
-        </ul>
-        {/* Mobile menu icon */}
-        <div className="dropdown md:hidden">
-          <button tabIndex={0} className="btn btn-ghost btn-square">
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" y1="6" x2="20" y2="6" />
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <line x1="4" y1="18" x2="20" y2="18" />
-            </svg>
-          </button>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-48">
-            <li>
-              <NavLink to="/" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/plants" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>Plants</NavLink>
-            </li>
-            <li>
-              <NavLink to="/profile" className={({isActive})=>isActive?"text-primary font-semibold":undefined}>My Profile</NavLink>
-            </li>
-          </ul>
+
+        {/* Navigation Links */}
+        <div className="flex-1 flex justify-center items-center space-x-8">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `text-gray-600 text-lg font-normal hover:text-[#16a34a] transition ${
+                isActive ? "text-[#16a34a] font-normal" : ""
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/plants"
+            className={({ isActive }) =>
+              `text-gray-600 text-lg font-normal hover:text-[#16a34a] transition ${
+                isActive ? "text-[#16a34a] font-normal" : ""
+              }`
+            }
+          >
+            Plants
+          </NavLink>
+          <NavLink
+            to="/profile"
+            className={({ isActive }) =>
+              `text-gray-600 text-lg font-normal hover:text-[#16a34a] transition ${
+                isActive ? "text-[#16a34a] font-normal" : ""
+              }`
+            }
+          >
+            My Profile
+          </NavLink>
         </div>
+
+        {/* Auth Section */}
         {!user ? (
-          <div className="flex gap-2">
-            <Link to="/login" className="btn btn-ghost btn-sm text-primary normal-case">Login</Link>
-            <Link to="/register" className="btn btn-primary btn-sm normal-case px-6">Register</Link>
+          <div className="flex items-center gap-3">
+            <Link
+              to="/login"
+              className="text-[#16a34a] text-lg rounded-lg px-3 py-2 hover:bg-[#e5f7ea] transition"
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="bg-[#16a34a] text-white text-lg px-5 py-2 rounded-lg font-normal hover:bg-[#149632] transition"
+            >
+              Register
+            </Link>
           </div>
         ) : (
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={user.photoURL || "https://i.ibb.co/d6s6wXC/avatar-placeholder.png"} alt="User avatar" />
-              </div>
-            </label>
-            <ul tabIndex={0} className="mt-3 z-10 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-              <li className="mb-2 font-semibold text-primary">{user.displayName || "Profile"}</li>
-              <li><button onClick={handleLogout} className="text-error">Logout</button></li>
-            </ul>
+          <div className="relative flex items-center gap-2">
+            <button className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#e5f7ea] transition">
+              <img
+                src={user.photoURL}
+                alt="User avatar"
+                className="w-9 h-9 rounded-full border border-[#16a34a]"
+              />
+              <span className="text-[#16a34a] text-lg">{user.displayName}</span>
+            </button>
+            {/* Dropdown (show always for this example; add menu logic for real auth) */}
+            <div className="absolute right-0 top-16 z-20 bg-white rounded shadow border border-gray-200 w-44 py-2">
+              <button
+                className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-100"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         )}
       </div>
