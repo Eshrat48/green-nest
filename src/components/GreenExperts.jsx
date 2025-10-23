@@ -9,7 +9,7 @@ const experts = [
     id: 1,
     name: "Sarah Johnson",
     specialization: "Tropical Plants Specialist",
-    image: expert1, // Update with your local image imports if needed
+    image: expert1, 
     experience: "10+ years",
   },
   {
