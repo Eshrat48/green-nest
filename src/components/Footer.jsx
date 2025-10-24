@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#166534] w-full text-white py-10 px-4 border-t border-[#14532d]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Left: Logo and tagline */}
+        
         <div>
           <div className="flex items-center gap-3 mb-3">
             <img src={leaf} alt="GreenNest" className="w-10 h-10" />
@@ -17,7 +17,6 @@ export default function Footer() {
             Nurture your space with healthy indoor plants and expert care guidance.
           </p>
         </div>
-        {/* Center: Quick Links */}
         <div>
           <div className="text-2xl font-normal mb-4 text-white">Quick Links</div>
           <ul className="space-y-2">
@@ -32,7 +31,6 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        {/* Social Icons: Font Awesome */}
         <div>
           <div className="text-2xl font-normal mb-4 text-white">Follow Us</div>
           <div className="flex gap-6">

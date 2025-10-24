@@ -2,12 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Plants from './pages/Plants';  // Move other pages to separate files similarly
+import Plants from './pages/Plants';  
 import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import PlantDetails from './pages/PlantDetails';
-import ProtectedRoute from './components/ProtectedRoute'; // Use correct path
+import ProtectedRoute from './components/ProtectedRoute'; 
 
 
 export default function App() {

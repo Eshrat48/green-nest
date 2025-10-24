@@ -4,6 +4,7 @@ import TopRatedPlants from '../components/TopRatedPlants';
 import PlantCareTips from '../components/PlantCareTips';
 import EcoDecor from '../components/EcoDecor';
 import GreenExperts from '../components/GreenExperts';
+import PlantOfTheWeek from '../components/PlantOfTheWeek';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <PlantCareTips />
       <EcoDecor />
       <GreenExperts />
+      <PlantOfTheWeek />  
     </main>
   );
 }

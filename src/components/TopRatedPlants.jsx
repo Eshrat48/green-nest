@@ -1,8 +1,10 @@
 import plants from '../data/plants';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
 
 export default function TopRatedPlants() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const topPlants = [...plants].sort((a, b) => b.rating - a.rating).slice(0, 6);
 
   return (
@@ -44,7 +46,7 @@ export default function TopRatedPlants() {
                   </div>
                 </div>
                 <button
-                  onClick={() => navigate('/login')}
+                  onClick={() => user ? navigate(`/plants/${plant.plantId}`) : navigate('/login')}
                   className="mt-4 self-end bg-green-500 hover:bg-green-600 text-white rounded-md text-sm px-5 py-2 font-medium shadow"
                 >
                   View Details
