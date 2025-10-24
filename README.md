@@ -1,16 +1,39 @@
-# React + Vite
+# GreenNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+GreenNest is a modern and fully responsive plant e-commerce web application designed to help users discover and purchase indoor plants. It offers a seamless user experience across all devices with features like user authentication via Google OAuth, plant catalog browsing, detailed plant information pages, and user profile management. The platform includes protected routes, persistent login with localStorage, and a clean green-themed UI built with React and Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Fully responsive design for phones, tablets, and desktops.
+- User authentication with email/password and Google OAuth.
+- Protected routes requiring login to view plant details.
+- User profile management with name and photo update functionality.
+- Password validation and toggle (show/hide password).
+- Forgot password with Gmail redirect link.
+- Plant catalog with detailed information cards.
+- "Plant of the Week" featured section.
+- Top-rated plants showcase.
+- Persistent login using localStorage.
+- Real-time profile updates via Context API.
+- Clean navigation with active link highlighting.
+- Toast notifications for user feedback.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+- **Frontend:** React 18.2, Vite 7.1
+- **Styling:** Tailwind CSS 3.4, DaisyUI 4.12
+- **Routing:** React Router DOM 6.8
+- **Authentication:** @react-oauth/google, jwt-decode
+- **UI Libraries:** React Icons, Lucide React, Swiper, Sonner
+- **State Management:** React Context API
+- **Storage:** localStorage
+- **Version Control:** Git & GitHub
+- **Deployment:** Netlify - https://green-nest-app.netlify.app/
+- **Others:** Responsive design, accessible HTML, modern UI/UX
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Demo
+
+- **Live Site:** https://green-nest-app.netlify.app/
+- **Repository:** https://github.com/programming-hero-web-course2/b12-a9-firesheild-Eshrat48.git
