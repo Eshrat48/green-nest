@@ -1,6 +1,8 @@
 import plants from '../data/plants';
+import { useNavigate } from 'react-router-dom';
 
 export default function TopRatedPlants() {
+  const navigate = useNavigate();
   const topPlants = [...plants].sort((a, b) => b.rating - a.rating).slice(0, 6);
 
   return (
@@ -41,7 +43,10 @@ export default function TopRatedPlants() {
                     <span className="text-green-400 ml-1 text-[16px]">${plant.price}</span>
                   </div>
                 </div>
-                <button className="mt-4 self-end bg-green-500 hover:bg-green-600 text-white rounded-md text-sm px-5 py-2 font-medium shadow">
+                <button
+                  onClick={() => navigate('/login')}
+                  className="mt-4 self-end bg-green-500 hover:bg-green-600 text-white rounded-md text-sm px-5 py-2 font-medium shadow"
+                >
                   View Details
                 </button>
               </div>

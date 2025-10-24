@@ -1,5 +1,6 @@
 // EcoDecor.jsx
 import livingWall from '../assets/living-wall.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const featured = {
   title: "Living Wall Art",
@@ -12,6 +13,8 @@ const featured = {
 };
 
 export default function EcoDecor() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-16 w-full bg-green-700 bg-gradient-to-br from-green-600 to-green-700">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:items-stretch gap-12 px-2">
@@ -30,7 +33,10 @@ export default function EcoDecor() {
             <span className="border-l border-green-300 h-5"></span>
             <span className="text-green-200">Special Price: <span className="text-white font-semibold">${featured.price}</span></span>
           </div>
-          <button className="bg-white text-green-700 font-semibold px-5 py-2 rounded shadow hover:bg-green-100 transition">
+          <button
+            onClick={() => navigate('/login')}
+            className="bg-white text-green-700 font-semibold px-5 py-2 rounded shadow hover:bg-green-100 transition"
+          >
             View Details
           </button>
         </div>
