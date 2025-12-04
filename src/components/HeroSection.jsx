@@ -36,7 +36,7 @@ export default function HeroSection() {
       navigation
       autoplay={{ delay: 5000, disableOnInteraction: false }}
       loop
-      className="h-[500px] md:h-[580px] rounded-b-lg overflow-hidden relative"
+    className="h-[60vh] md:h-[70vh] rounded-b-lg overflow-hidden relative"
     >
       {slides.map((slide, i) => (
         <SwiperSlide key={i}>

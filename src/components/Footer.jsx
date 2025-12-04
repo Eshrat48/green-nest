@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import leaf from "../assets/leaf.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebookF, faPinterestP } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faFacebookF, faPinterestP, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   return (

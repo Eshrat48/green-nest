@@ -13,19 +13,19 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full shadow-sm border border-gray-300 rounded-sm bg-white px-4">
+    <nav className="w-full shadow-sm border border-gray-300 rounded-sm bg-[#16a34a] px-4 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3">
           <img src={leaf} alt="GreenNest logo" className="w-9 h-9" />
-          <span className="text-[#16a34a] text-xl font-normal">GreenNest</span>
+          <span className="text-white text-xl font-normal">GreenNest</span>
         </Link>
 
         <div className="flex-1 flex justify-center items-center space-x-8">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              (isActive ? "text-[#16a34a]" : "text-gray-600") +
-              " text-lg font-normal hover:text-[#16a34a] transition"
+              (isActive ? "text-white" : "text-white") +
+              " text-lg font-normal hover:text-gray-200 transition"
             }
           >
             Home
@@ -33,21 +33,50 @@ export default function Navbar() {
           <NavLink
             to="/plants"
             className={({ isActive }) =>
-              (isActive ? "text-[#16a34a]" : "text-gray-600") +
-              " text-lg font-normal hover:text-[#16a34a] transition"
+              (isActive ? "text-white" : "text-white") +
+              " text-lg font-normal hover:text-gray-200 transition"
             }
           >
             Plants
           </NavLink>
           <NavLink
-            to="/profile"
+            to="/about"
             className={({ isActive }) =>
-              (isActive ? "text-[#16a34a]" : "text-gray-600") +
-              " text-lg font-normal hover:text-[#16a34a] transition"
+              (isActive ? "text-white" : "text-white") +
+              " text-lg font-normal hover:text-gray-200 transition"
             }
           >
-            My Profile
+            About Us
           </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              (isActive ? "text-white" : "text-white") +
+              " text-lg font-normal hover:text-gray-200 transition"
+            }
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            to="/support"
+            className={({ isActive }) =>
+              (isActive ? "text-white" : "text-white") +
+              " text-lg font-normal hover:text-gray-200 transition"
+            }
+          >
+            Support
+          </NavLink>
+          {user && (
+            <NavLink
+              to="/profile"
+              className={({ isActive }) =>
+                (isActive ? "text-white" : "text-white") +
+                " text-lg font-normal hover:text-gray-200 transition"
+              }
+            >
+              My Profile
+            </NavLink>
+          )}
         </div>
 
         <div className="flex items-center gap-4 relative">
@@ -55,13 +84,13 @@ export default function Navbar() {
             <>
               <Link
                 to="/login"
-                className="px-4 py-2 bg-[#16a34a] text-white rounded hover:bg-[#15803d] transition"
+                className="px-4 py-2 border border-[#f8f9f9] text-white rounded hover:bg-[#15803d] transition"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 border border-[#16a34a] text-[#16a34a] rounded hover:bg-[#f0fdf4] transition"
+                className="px-4 py-2 border border-[#f8f9f9] text-[#fbfdfc] rounded hover:bg-[#0e5724] transition"
               >
                 Register
               </Link>
@@ -79,7 +108,7 @@ export default function Navbar() {
                   alt="user"
                   className="w-12 h-12 rounded-full border border-[#16a34a]"
                 />
-                <span className="ml-3 text-[#16a34a] text-lg">
+                <span className="ml-3 text-white text-lg">
                   {user.displayName || "User"}
                 </span>
               </button>

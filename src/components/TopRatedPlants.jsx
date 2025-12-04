@@ -22,7 +22,7 @@ export default function TopRatedPlants() {
           {topPlants.map((plant) => (
             <div
               key={plant.plantId}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100 flex flex-col w-[300px] overflow-hidden"
+              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100 flex flex-col overflow-hidden"
             >
               <div className="w-full h-[340px] bg-gray-100">
                 <img
