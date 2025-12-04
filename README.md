@@ -36,4 +36,4 @@ GreenNest is a modern and fully responsive plant e-commerce web application desi
 ## Live Demo
 
 - **Live Site:** https://green-nest-app.netlify.app/
-- **Repository:** https://github.com/programming-hero-web-course2/b12-a9-firesheild-Eshrat48.git
+- **Repository:** https://github.com/Eshrat48/green-nest.git
